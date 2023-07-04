@@ -28,7 +28,7 @@ The primary project objective is to enable cyber security analysts and systems e
 <h3> <b> Concept Architecture Description </b> </h3>
 The goal of this project is to design and implement a robust prototype solution for the sample problem above. Using the concept illustrated below, the implementation for the "Smart" HVAC prototype can be divided into four (4) basic tasks, consistent with the commonly accepted conceptual framework (4-layer) architecture shown below:
 
-<div style="margin:1em;margin-left:0;padding:.5em;width:75%;height:50%;border:solid thin" >
+<div style="margin:6px;margin-left:0;padding:2px;width:75%;height:50%;border: solid thin" >
 <img src="images/concept2.jpg" />
 <center> <p> Figure 3: RTDMS Concept </p> </center>
 </div>
