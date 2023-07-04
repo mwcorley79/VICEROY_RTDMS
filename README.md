@@ -1,12 +1,13 @@
-## <b>IoT Project #1: Remote Datacenter Temperature Management System - (RDTMS) v1.0 </b>
+<h2> <b>IoT Project #1: Remote Datacenter Temperature Management System - (RDTMS) v1.0 </b></h2>
 
-### <b>Background</b>
+<h3> <b>Background</b></h3>
 Recent advancements in embedded computing technology have enabled a new generation of smaller and faster internet-of-things (IoT) devices. In research and development (and often in military contexts), the acronynm SWaP-C is used in reference to optimizing the Size, Weight, Power, and Cost of pysical devices, systems, and programs.  The convergence of allied technologies such as Edge computing, scalable Cloud services, AI/ML algorithm advancement, and ubiqutious high bandwidth network availability (e.g., 5G), have led an evolving distributed ecosystem that offers cost-effective, performant, scalable and resilent soutions to traditional hard technical challenges.  Although new technology offers benefits and avantages, there are also untended consequence that introduce new risks. The adoption of IoT technology into commercial and military domains has been stifled due to the significant risks associated with increased security vulnerabilities that result from lacking standardization and guidance and the architectural variance across the major pedigrees of device types.  Competing (and proprietary) vendor systems limits interoperability and signifiantly increases the scale and complexity of integrating IoT technology operational systems and environments.    
 
-### <b>Sample Problem Synopsis</b>
+<h3> <b>Sample Problem Synopsis</b></h3>
 Information technology (IT) infrastructure is one of the most important assets to data centric environment.  If IT equipment such as servers, firewalls, routers, switch panels and related systems were to overheat, it could significantly impact the performance, availability, and the reliability of critical information systems, potentually resulting in grave financial damage and even loss of life.  The application of new IoT technology and with the use of Cloud services can be used to achieve a lightweight, cost-effective solution that minimizes costs and overhead by automating certain datacenter maintenance operations such montoring and regulating temperature conditions.
 
-### <b>Project Description</b>
+<h3> <b>Project Description</b></h3>
+
 The RDTMS (v1.0) is intended to be prototyped using the Raspberry PI (RPi) SBC (single board computer), version 2 or greater. The purpose is to developed a "smart" HVAC system to monitor temperature and humidity conditions, and automatically activate/deactivate an external HVAC unit when sensed operating conditions exceed specified thresholds. A LCD character display is used indicate HVAC operation (ON/OFF) status.  The system will automatically dispatch a recorded phone call or text message to alert maintenance operators when conditions exceed specified threshholds. If-This-Then-That (IFTTT) automation service is integated using a webhook exposed from an Azure function to facilite making phone call, sending the text message, or sending an email.  A downloadable Cloud-hosted (PaaS) web application will deployed to the Azure Cloud, and used to provide maintenance operators with a real-time visualization and telemetry monitoring capability that can be viewed using a desktop PC or mobile device.  
 
 <div style="margin:1em;margin-left:0;padding:.5em;width:40%;height:15%;border:solid thin">
@@ -14,7 +15,7 @@ The RDTMS (v1.0) is intended to be prototyped using the Raspberry PI (RPi) SBC (
   <center> <p> Figure 1: RTDMS version 1.0 </p> </center>
 </div>
 
-### <b>Objectives and Goals</b>
+<h3> <b>Objectives and Goals</b></h3>
 The primary project objective is to enable cyber security analysts and systems engineers to develop the architectural awareness to reason critically about the design, security, and resiliency of IoT systems.  IoT systems consist of hetergenous parts, and is therefore important that analysts have a holistic understanding of the underlying architecure. This repository describes an active learning project that leads the student through the design and implementation of a (“Smart”) IoT prototype that provides remote datacenter condition monitoring, automated temperature regulation, and automated operator alerting. At each stage of the architecture design and implementation, a critical security analysis/assessment should be performed to identify and document identified vulnerabilities. A mitigation strategy should be developed and implemented for each identified case.  
 
 <div style="margin:1em;margin-left:0;padding:.5em;width:55%;height:35%;border:solid thin" >
@@ -24,7 +25,7 @@ The primary project objective is to enable cyber security analysts and systems e
 
 <br>
 
-### <b> Concept Architecture Description </b>
+<h3> <b> Concept Architecture Description </b> </h3>
 The goal of this project is to design and implement a robust prototype solution for the sample problem above. Using the concept illustrated below, the implementation for the "Smart" HVAC prototype can be divided into four (4) basic tasks, consistent with the commonly accepted conceptual framework (4-layer) architecture shown below:
 
 <div style="margin:1em;margin-left:0;padding:.5em;width:75%;height:50%;border:solid thin" >
@@ -53,7 +54,7 @@ system functionality maps into the testing framework in Figure 4.
 
 <br>
 
-## <b> Task 1: Construct the Device: </b>
+<h2> <b> Task 1: Construct the Device: </b> </h2>
 <b>Device (Hardware) requirements: </b> RPi dev board (versions 2,3, and 4 suffice), and full-size breadboard consisting of the following electronic components:
 <ul>
    <li>
@@ -108,7 +109,7 @@ The breadboard shown in Figure 3 (above) is paired with a GPIO expansion board t
 
 <br>
 
-### <b> Assemble the Device Hardware </b> 
+<h3> <b> Assemble the Device Hardware </b> </h3>
 With the RPi and unplugged from the power source, follow the design sketch shown below to install the electronic compnents. Install the BME280 sensor and the LCD character display onto the breadboard, and connect to the I2C bus pins SDA and SCK and described below:     
 
 <div style="margin:1em;margin-left:0;padding:.5em;width:80%;height:50%;border:solid thin">
@@ -140,7 +141,7 @@ With the RPi and unplugged from the power source, follow the design sketch shown
 13.	Connect a <b><span style="color:black">“Black”</span></b> wire from “GND” pin on the LCD character display to the “negative (-) terminal strip on the breadboard.  
 14.	Connect a <b><span style="color:red">“Red” </span></b> wire from “VCC” pin on the LCD character display sensor to the “positive (+) (5v) terminal strip on the breadboard.  
 
-### <b> Initial Device Test: I<sup>2</sup>C bus communication: </b>
+<h3> <b> Initial Device Test: I<sup>2</sup>C bus communication: </b></h3>
 
 Use the "i2cdetect" command as discussed in the following URL, to scan the I<sup>2</sup>C bus. The BME280 and LCD character display addresses should be displayed as 0x77 for the BME280, and 0x27 for the LCD character display.
 If no addresses appear in the scan (or only one address) then either the circuit configuration is incorrect, and/or potentially the BME280 sensor working properly.
@@ -158,12 +159,12 @@ Note: The RTDMS sketch (above) is shown with an LED acting as a stand-in for the
 </div>
 
 
-## <b> Step 2: Developing RTDMS Driver Software </b>
-### <b> Getting Started: </b>
+<h2><b> Step 2: Developing RTDMS Driver Software </b></h2>
+<h3> <b> Getting Started: </b></h3>
 The RTDMS driver is the code that runs on the physical device.  This includes the code for reading the BME280 (TPH) sensor data using I2C serial bus protocol, and packaging that data as telemetry to dispatch to the Cloud.   As you will see below, the majority of the code has been provided. Your job is understand and complete each of the code as described in subsequent sections. 
 The project was prepared using Ubuntu 22.04 development host, using C# programming and .Net 6.0 SDK environment with standard .net IoT NuGet packages, and the Visual Studio (VSCode) editor. The Raspberry 3 target board is single board computer (SBC) with an ARM-64bit CPU, running the latest version of Raspberry Pi OS (Debian Linux distro).
 
-### <b>Raspberry Pi Setup</b>
+ <h3><b>Raspberry Pi Setup</b></h3>
 Refer to the following URL, follow the documentation to download and install the Raspberry Pi Imager to a computer with an SD Card reader.  Insert the SD card into the computer: https://www.raspberrypi.com/software/operating-systems/
 The Imager will provide an option to choose "Rasperry Pi OS (other)". Select  Raspberry Pi OS (64-bit Debian Bullseye) Pi Desktop as shown in below. The sproket (cog) wheel on the lower right of the imager window allows you to configure the Rasberry Pi prior to writing the image to the SD card. Configure settings including username, network ssid, VNC, and SHH etc. as shown below   
 
@@ -183,7 +184,7 @@ The Imager will provide an option to choose "Rasperry Pi OS (other)". Select  Ra
     <center> <p>  Figure 9: Use the 64-bit version </p> </center>
 </div>
 
-### <b>Complete the Raspberry Pi OS Configuration</b>
+<h3><b>Complete the Raspberry Pi OS Configuration</b></h3>
 Upon completing Raspberry Pi OS isntallation, open a terminal, and run the <i>raspi-config</i> command. 
 Ensure the following services are enabled:
 1.	SSH (Secure Shell)
@@ -198,26 +199,26 @@ Ensure the following services are enabled:
 <br>
 
 
-### <b> Create an Microsoft Azure Cloud Account: Student Subscription </b>
+<h3><b> Create an Microsoft Azure Cloud Account: Student Subscription </b></h3>
 Referring to the following URL, use your university or school email to sign up a $100 Azure credit (good for 12 months): https://azure.microsoft.com/en-us/free/students/
 
 Refer to the following URL to create an Azure IoT Hub Service (using the free tier), and register a new IoT device.  Name the device the "RTDMS_dev1". Copy the device the primary connection string, you will need to configure the appsettings.json configuration file in thge next section.  The connection string is needed for authenticating the RTDMS device, and the Azure Cloud (IoT Hub service).
 https://learn.microsoft.com/en-us/azure/iot-hub/iot-hub-raspberry-pi-web-simulator-get-started#create-an-iot-hub
 
 
-### <b> Ubuntu 22.04 (Development Host) Setup </b>
-#### Download Visual Studio Code (VSCode) editor (for Ubuntu)
+<h3> <b> Ubuntu 22.04 (Development Host) Setup </b></h3>
+<h4> Download Visual Studio Code (VSCode) editor (for Ubuntu)<h4>
 ```sh
 sudo apt update
 sudo apt install code
 ```
-#### Open VSCode, and install the official (Microsoft) C# language extension as illustrated (below)
+<h4> Open VSCode, and install the official (Microsoft) C# language extension as illustrated (below) </h4>
 <div style="margin:1em;margin-left:0;padding:.5em;width: fit-content;height:40%;border:solid thin" >
     <img src="images/extension1.jpg" />
     <center> <p> <u> Official C# VSCode extension </u> </p> </center>
 </div>
 
-#### Install .Net 6.0 (LTS) for Linux (x64) on the Development Host):
+<h4> Install .Net 6.0 (LTS) for Linux (x64) on the Development Host): </h4>
 <div style="margin:1em;margin-left:0;padding:.5em;width:70%;height:40%;border:solid thin" >
     <img src="images/dotnet.jpg" />
     <center> <p> VSCode <u> https://code.visualstudio.com/download </u> </p> </center>
@@ -250,7 +251,7 @@ dotnet --list_sdks
     <center> <p> List dotnet SDKs installed </p> </center>
 </div>
 
-## <b> Create the .Net (RTDMS-V1) Solution (sln) </b>
+<h2> <b> Create the .Net (RTDMS-V1) Solution (sln) </b></h2>
 Open terminal, and use the dotnet CLI (command line interface) to run the command below.  
 
 ```sh
@@ -296,8 +297,8 @@ mkdir projects && cd projects
         dotnet add package Microsoft.Azure.Devices.Client
 ```
 
-### C# .Net IoT (NuGet) Library packages:
-#### Communication with the device components using the I2C through the GPIO header is provided by the .Net IoT library packages:
+<h3> C# .Net IoT (NuGet) Library packages: </h3>
+<h4> Communication with the device components using the I2C through the GPIO header is provided by the .Net IoT library packages: </h4>
 
 <b> System.Device.Gpio - </b> supports general-purpose I/O (GPIO) pins, PWM, I2C, SPI and related interfaces for interacting with low level   hardware pins to control hardware sensors, displays and input devices on single-board-computers; Raspberry Pi, BeagleBoard, HummingBoard, ODROID, and other single-board-computers that are supported by Linux
             
@@ -307,7 +308,7 @@ mkdir projects && cd projects
 
 <br>
 
-### <b> Prepare the RTDMS code </b>
+<h3> <b> Prepare the RTDMS code </b></h3>
 ```sh
 # Nativate to the RTDMS_V1 solution (sln) folder
 cd ~/projects/RTDMS-V1
@@ -1046,7 +1047,7 @@ namespace viceroy
 }
 ```
 
-### <b> Building and Deploying the RTDMS driver to the Raspberry PI </b>
+<h3> <b> Building and Deploying the RTDMS driver to the Raspberry PI </b></h3>
 At this point, the RTDMS driver should compile successfully, with no errors and no warnings.
 To Test, open a terminal in the VScode editor, navigate to the solution folder: <u>cd RTDMS-V1/</u>, and issue the command:
 <u> "dotnet build" </u> to compile all of the projects in the solution as shown in the example screen shot below.
@@ -1060,7 +1061,7 @@ Athough the code compiles succesfully, it will not run on the develop host becau
 of the Raspberry Pi. Therefore, we need build and upload the code to the Raspberry Pi 
 <br><br>
 
-### <b> Deploy the RTDMS driver code to the Raspberry Pi </b>
+ <h3><b> Deploy the RTDMS driver code to the Raspberry Pi </b></h3>
 To develop and and test the RTDMS code, it must be deployed to target hardware device. For this project, the target hardware is the prototype RTDMS device developed on the full size breadboard, and connected to a Raspberry Pi via the GPIO header. The RTDMS code logic is uploaded and executed on the Raspberry Pi as Linux process. This code is developed using standard dotnet IoT libraries (NuGet) packages to drive the hardware prototype through the GPIO header.      
 RTDMS code deployment to Raspberry Pi can be accomplished using two commands, saved to a script to run each time the cocode is uploaded to the Raspberry PI.
 Commands:
