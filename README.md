@@ -306,7 +306,7 @@ mkdir projects && cd projects
             
 <b> Supported Operating Systems - </b>  The .NET IoT Libraries will run on any operating system that supports the .NET framework. This includes most Linux distributions (and Raspberry Pi OS is a Debian distro) that support AMD/AMD64 and ARM/ARM64. Note: .Net will not run on RPi version 1 using the older ARM v6 CPU)
 
-<br>
+<br/>
 
 <h3> <b> Prepare the RTDMS code </b></h3>
 ```sh
