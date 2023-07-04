@@ -10,9 +10,9 @@ Information technology (IT) infrastructure is one of the most important assets t
 
 The RDTMS (v1.0) is intended to be prototyped using the Raspberry PI (RPi) SBC (single board computer), version 2 or greater. The purpose is to developed a "smart" HVAC system to monitor temperature and humidity conditions, and automatically activate/deactivate an external HVAC unit when sensed operating conditions exceed specified thresholds. A LCD character display is used indicate HVAC operation (ON/OFF) status.  The system will automatically dispatch a recorded phone call or text message to alert maintenance operators when conditions exceed specified threshholds. If-This-Then-That (IFTTT) automation service is integated using a webhook exposed from an Azure function to facilite making phone call, sending the text message, or sending an email.  A downloadable Cloud-hosted (PaaS) web application will deployed to the Azure Cloud, and used to provide maintenance operators with a real-time visualization and telemetry monitoring capability that can be viewed using a desktop PC or mobile device.  
 
-<div style="margin:1em;margin-left:0;padding:.5em;width:40%;height:15%;border:solid thin">
+<div style="margin:1em;margin-left:0;padding:.5em;width:40%;height:15%;border:solid thin; text-align: center">
   <img src="images/d3.jpg" />
-  <center> <p> Figure 1: RTDMS version 1.0 </p> </center>
+  <p> Figure 1: RTDMS version 1.0 </p>
 </div>
 
 <h3> <b>Objectives and Goals</b></h3>
