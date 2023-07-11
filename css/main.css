@@ -1,0 +1,78 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+pre[class*="language-"] {
+    position: relative; 
+    overflow: auto;
+
+    /* make space  */
+    margin: 5px 0;
+    padding: 1.75rem 0 1.75rem 1rem; 
+    border-radius: 10px;
+    border: solid thin;
+    font-size: medium;
+}
+
+ol, p, li, h4, img, div 
+{
+    width: 100%; 
+    margin: .5em;
+}
+
+h3, h1, h2 
+{
+    width: 100%;
+}
+
+
+
+pre[class*="language-"] button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    text-align: left;
+
+  
+    font-size: 0.9rem;
+    padding: 0.15rem;
+    background-color: gray;
+    color: white;
+
+    border: ridge 1px #7b7b7c;
+    border-radius: 5px;
+    text-shadow: #c4c4c4 0 0 2px;
+}
+
+pre[class*="language-"] button:hover {
+    cursor: pointer;
+    background-color: #bcbabb;
+}
+
+
+
+body {
+    margin: 2em;
+    font-size: large;
+    font-family:'Courier New', Courier, monospace
+}
+
+.note {
+    background: lightblue;
+    padding: 1em;
+    margin-bottom: .5em;
+    margin-top: 1em;
+    width: fit-content;
+}
+
+pre {
+    width: 100%;
+    padding: 1em;
+}
+
+code
+{
+    margin: .5em;
+}
