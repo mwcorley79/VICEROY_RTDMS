@@ -1,5 +1,5 @@
-<a href="./readme.html">Click here to view the updated HTML version of the repo</a> 
 
+[Click here to view the updated HTML version of the repo](./readme.html)
 <h2> <b>IoT Project #1: Remote Datacenter Temperature Management System - (RDTMS) v1.0 </b></h2>
 
 <h3> <b>Background</b></h3>
