@@ -1,5 +1,5 @@
-
-<a href="https://github.com/mwcorley79/VICEROY_RTDMS/readme.html">Click here to view the updated HTML version of the repo </a>
+Click here to view the updated HTML version:
+https://github.com/mwcorley79/VICEROY_RTDMS/readme.html
 
 <h2> <b>IoT Project #1: Remote Datacenter Temperature Management System - (RDTMS) v1.0 </b></h2>
 
